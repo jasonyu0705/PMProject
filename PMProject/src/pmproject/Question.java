@@ -52,6 +52,26 @@ public class Question {
             return option4;
         }
     }
+    public int getAnswer(){
+        return answer;
+    }
+    public void setQuestion(String q){
+        this.question=q;
+    }
+    public void setOption(String o, int n){
+        if (n == 1){
+            this.option1=o;
+        }else if (n==2){
+            this.option2=o;
+        }else if (n==3){
+            this.option3=o;
+        }else{
+            this.option4=o;
+        }
+    }
+    public void setAnswer(int n){
+        
+    }
 
 }
 

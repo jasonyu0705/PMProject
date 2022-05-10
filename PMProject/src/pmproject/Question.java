@@ -9,5 +9,49 @@ package pmproject;
  * @author jason
  */
 public class Question {
+
+
+    private String question;
+    private String option1;
+    private String option2;
+    private String option3;
+    private String option4;
+    private int answer;
+
+    public Question() {
+        question = "";
+        option1 = "";
+        option2 = "";
+        option3 = "";
+        option4 = "";
+        answer = 0;
+    }
+
+    public Question(String q, String o1, String o2, String o3, String o4, int a) {
+        super();
+        question = q;
+        option1 = o1;
+        option2 = o2;
+        option3 = o3;
+        option4 = o4;
+        answer = a;
+    }
     
+    public String getQuestion(){
+        return question;
+    }
+    
+    public String getOption(int n){
+        if (n == 1){
+            return option1;
+        }else if (n==2){
+            return option2;
+        }else if (n==3){
+            return option3;
+        }else{
+            return option4;
+        }
+    }
+
 }
+

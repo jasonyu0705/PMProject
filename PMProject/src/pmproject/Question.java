@@ -70,7 +70,7 @@ public class Question {
         }
     }
     public void setAnswer(int n){
-        
+        this.answer=n;
     }
 
 }

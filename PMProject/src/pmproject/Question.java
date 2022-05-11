@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this licensee
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/*Question class
+attributes: question, option 1-4, answer
  */
 package pmproject;
 
@@ -9,14 +8,17 @@ package pmproject;
  * @author jason
  */
 public class Question {
-
+    
     private String question;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
     private int answer;
-
+    /**
+     * question constructor
+     * no parameters
+     */
     public Question() {
         question = "";
         option1 = "";
@@ -25,7 +27,16 @@ public class Question {
         option4 = "";
         answer = 0;
     }
-
+    /**
+     * question constructor
+     * includes all parameters
+     * @param q - string variable with question
+     * @param o1 - first option
+     * @param o2 - second option
+     * @param o3 - third option
+     * @param o4 - fourth option
+     * @param a - answer integer 1-4
+     */
     public Question(String q, String o1, String o2, String o3, String o4, int a) {
         super();
         question = q;
@@ -35,11 +46,18 @@ public class Question {
         option4 = o4;
         answer = a;
     }
-
+    /**
+     * accessor for the question
+     * @return - the question
+     */
     public String getQuestion() {
         return question;
     }
-
+    /**
+     * accessor for each option
+     * @param n - which option to return 1-4
+     * @return the option
+     */
     public String getOption(int n) {
         if (n == 1) {
             return option1;
@@ -51,15 +69,25 @@ public class Question {
             return option4;
         }
     }
-
+    /**
+     * accessor for the answer
+     * @return - the answer
+     */
     public int getAnswer() {
         return answer;
     }
-
+    /**
+     * mutator for the question
+     * @param q - the new question
+     */
     public void setQuestion(String q) {
         this.question = q;
     }
-
+    /**
+     * mutator for the option
+     * @param o - the new option
+     * @param n - which option to replace
+     */
     public void setOption(String o, int n) {
         if (n == 1) {
             this.option1 = o;
@@ -71,11 +99,17 @@ public class Question {
             this.option4 = o;
         }
     }
-
+    /**
+     * mutator for the answer
+     * @param n - the new answer
+     */
     public void setAnswer(int n) {
         this.answer = n;
     }
-
+    /**
+     * to string method returns string with all the question's info
+     * @return - the string
+     */
     public String toString() {
         return question + "?" + "\n"
                 + " a) " + option1
@@ -83,12 +117,19 @@ public class Question {
                 + "\n c) " + option3
                 + "\n d) " + option1;
     }
-
+    /**
+     * clone method returns a question with the same properties
+     * @return - cloned question
+     */
     public Question clone() {
         Question q = new Question(question, option1, option2, option3, option4, answer);
         return q;
     }
-
+    /**
+     * equals method checks if two questions are the same
+     * @param q - question being checked
+     * @return - boolean of if they are identical
+     */
     public boolean equals(Question q) {
         if (this.question.equals(q)) {
             return true;

@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="155" max="-2" attributes="0"/>
+              <Component id="lblDescription" min="-2" pref="155" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -34,7 +34,7 @@
                   <Component id="btnExit" min="-2" pref="173" max="-2" attributes="0"/>
                   <Component id="btnQuiz" min="-2" pref="173" max="-2" attributes="0"/>
                   <Component id="btnStudy" min="-2" pref="173" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="201" max="-2" attributes="0"/>
+                  <Component id="lblPMTitle" min="-2" pref="201" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="133" max="32767" attributes="0"/>
           </Group>
@@ -44,9 +44,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="lblPMTitle" min="-2" pref="28" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="lblDescription" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="btnStudy" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -59,12 +59,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblPMTitle">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&quot;Project Management&quot; project"/>
+        <Property name="text" type="java.lang.String" value="&quot;Project Management&quot; Project"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblDescription">
       <Properties>
         <Property name="text" type="java.lang.String" value="The Study Guide"/>
       </Properties>

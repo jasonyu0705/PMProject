@@ -60,6 +60,11 @@ public class PmProject extends javax.swing.JFrame {
 
         btnExit.setBackground(new java.awt.Color(255, 255, 255));
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,7 +107,7 @@ public class PmProject extends javax.swing.JFrame {
 
     private void btnStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudyActionPerformed
         if (notebook == null) {
-            notebook = new StudyMat();
+            notebook = new StudyMat(this);
         }
 
         notebook.setVisible(true);
@@ -111,12 +116,16 @@ public class PmProject extends javax.swing.JFrame {
 
     private void btnQuizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuizActionPerformed
         if (practiceTest == null) {
-            practiceTest = new Quiz();
+            practiceTest = new Quiz(this);
         }
 
         practiceTest.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnQuizActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments

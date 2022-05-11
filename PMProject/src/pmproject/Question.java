@@ -38,7 +38,7 @@ public class Question {
      * @param a - answer integer 1-4
      */
     public Question(String q, String o1, String o2, String o3, String o4, int a) {
-        super();
+        this();
         question = q;
         option1 = o1;
         option2 = o2;

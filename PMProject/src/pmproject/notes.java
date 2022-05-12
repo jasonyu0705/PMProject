@@ -14,7 +14,7 @@ public class notes {
     
     private int chapter;
     private String contents;
-    private String imagePath;
+
     /**
      * notes constructor
      * no parameters
@@ -22,20 +22,17 @@ public class notes {
     public notes(){
         chapter = 0;
         contents = "";
-        imagePath = "";
     }
     /**
      * secondary constructor
      * includes all parameters
      * @param c - the chapter
      * @param cont - contents
-     * @param image - image file location
      */
-    public notes (int c, String cont, String image){
+    public notes (int c, String cont){
         this();
         chapter = c;
         contents = cont;
-        imagePath = image;
     }
     /**
      * accessor for the chapter number
@@ -65,26 +62,13 @@ public class notes {
     public void setContents(String c){
         contents = c;
     }
-    /**
-     * accessor for the image path
-     * @return - the image path
-     */
-    public String getImagePath(){
-        return imagePath;
-    }
-    /**
-     * mutator for the image path
-     * @param i - new image path
-     */
-    public void setImagePath(String i){
-        imagePath = i;
-    }
+
     /**
      * to string method returns string with all the info on the note
      * @return - string with the info
      */
     public String toString(){
-        return "Chapter: " + chapter + "Contents: " + contents; //no need for image path because user doesn't care
+        return "Chapter: " + chapter + "\nContents: " + contents; 
     }
     /**
      * equals method checks if two notes are the same
@@ -99,7 +83,7 @@ public class notes {
      * @return - cloned note
      */
     public notes clone(){
-        return new notes(chapter, contents, imagePath);
+        return new notes(chapter, contents);
     }
     
 }

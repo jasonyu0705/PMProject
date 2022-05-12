@@ -13,9 +13,8 @@ import java.util.Scanner;
  * @author jason
  */
 public class Quiz extends javax.swing.JFrame {
-
+    // instantiate variables
     private PmProject menu;
-
     public Question[] questions = new Question[10];
     public String theQuestion;
     private String optionOne;
@@ -29,39 +28,45 @@ public class Quiz extends javax.swing.JFrame {
     int rightAnswer = 0;
     int wrongAnswer = 0;
     String msg = "";
-    ArrayList<Integer> wrongList = new ArrayList();
+
 
     /**
      * Creates new form Quiz
      */
     public Quiz(PmProject p) {
         initComponents();
-        try {
+        try {// create the try to the try catch statement
+            //instantiate a new file
             File f = new File("src\\pmproject\\quizQuestions.txt");
+            // instantiate a new scanner
             Scanner s = new Scanner(f);
+            // read through the file with a for loop
             for (int i = 0; i < 10; i++) {
                 /**
                  * gonna leave spaces between questions for easy viewing.
                  * Remember to work around this in program Sample question
                  * Option 1 Option 2 Option 3 Option 4 Index of answer*
                  */
+                // readd all the info neede for one question object
                 theQuestion = s.nextLine();
                 optionOne = s.nextLine();
                 optionTwo = s.nextLine();
                 optionThree = s.nextLine();
                 optionFour = s.nextLine();
                 ansIndex = Integer.parseInt(s.nextLine());
-                //placeholder = s.nextLine();
-                // idk y but the spaces in the file messedup reading it
-                // if you can fix it , you can re add the spaces
+                
+               //create a new uquestion object
                 q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 4);
+                // add the question object to the array of questions
                 questions[i] = q;
                 //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error:" + e);
         }
+        
         menu = p;
+        // disable some buttons so that the program wont error
         rBtnA.setEnabled(false);
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);
@@ -71,15 +76,20 @@ public class Quiz extends javax.swing.JFrame {
         btnCheck.setEnabled(false);
 
     }
-
+/**
+ * show the info on each of the questions
+ */
     public void showInfo() {
+        // set the text to the 
         txtFieldQuestion.setText(questions[counter].getQuestion());
         rBtnA.setText(questions[counter].getOption(1));
         rBtnB.setText(questions[counter].getOption(2));
         rBtnC.setText(questions[counter].getOption(3));
         rBtnD.setText(questions[counter].getOption(4));
     }
-
+/**
+ * reset the buttons so that they are all de selected 
+ */
     public void reset() {
         rBtnA.setSelected(false);
         rBtnB.setSelected(false);

@@ -4,6 +4,10 @@
  */
 package pmproject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  *
  * @author jason
@@ -11,13 +15,38 @@ package pmproject;
 public class StudyMat extends javax.swing.JFrame {
 
     private PmProject menu;
-    
+    private notes[] textbook;
+
     /**
      * Creates new form StudyMat
      */
     public StudyMat(PmProject p) {
         initComponents();
         menu = p;
+
+        try {
+            File f = new File("src/pmproject/studyNotes.txt");
+            Scanner s = new Scanner(f);
+            textbook = new notes[10]; //10 chapters
+            String msg = "";
+            int chapter;
+
+            
+            for (int i = 0; i < textbook.length; i++){
+                chapter = Integer.parseInt(s.nextLine());
+                for (int j = 0; j < 7; j++) {
+                    msg += s.nextLine() + "\n";
+                }
+                textbook[i]  = new notes(chapter, msg);
+                msg = "";
+            }
+            
+            
+        } catch (FileNotFoundException e) {
+            txtAstudy.setText("Error: " + e);
+        }
+        
+        btnView.setSelected(true);
     }
 
     /**
@@ -33,7 +62,7 @@ public class StudyMat extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAstudy = new javax.swing.JTextArea();
         lblUnitToStudy = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cBoxChapter = new javax.swing.JComboBox<>();
         btnEdit = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
 
@@ -52,7 +81,7 @@ public class StudyMat extends javax.swing.JFrame {
 
         lblUnitToStudy.setText("Unit of Study:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Overview", "Success", "Waterfall Model", "Analysis", "Design", "Implementation", "Testing/Integration", "Maintenance", "Gantt Chart", "Universal Modeling Language" }));
+        cBoxChapter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Overview", "Success", "Waterfall Model", "Analysis", "Design", "Implementation", "Testing/Integration", "Maintenance", "Gantt Chart", "Universal Modeling Language" }));
 
         btnEdit.setText("Save Edits");
 
@@ -80,7 +109,7 @@ public class StudyMat extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblUnitToStudy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cBoxChapter, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnView)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
@@ -93,7 +122,7 @@ public class StudyMat extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUnitToStudy)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cBoxChapter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEdit)
                     .addComponent(btnView))
                 .addGap(18, 18, 18)
@@ -112,14 +141,15 @@ public class StudyMat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
+        int viewChap = cBoxChapter.getSelectedIndex();
+        txtAstudy.setText(textbook[viewChap].toString());
     }//GEN-LAST:event_btnViewActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnView;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cBoxChapter;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUnitToStudy;
     private javax.swing.JTextArea txtAstudy;

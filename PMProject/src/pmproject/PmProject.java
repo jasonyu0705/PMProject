@@ -15,13 +15,7 @@ public class PmProject extends javax.swing.JFrame {
 
     private StudyMat notebook;
     private Quiz practiceTest;
-    public String[] questionNum = new String[10];
-    public String[] optionOne = new String[10];
-    public String[] optionTwo = new String[10];
-    public String[] optionThree = new String[10];
-    public String[] optionFour = new String[10];
-    public int[] ansIndex = new int[10];
-     private String placeholder;
+   
 
     /**
      * Creates new form PmProject
@@ -30,22 +24,7 @@ public class PmProject extends javax.swing.JFrame {
         initComponents();
         // read file stuff
         /**
-        try {
-            File f = new File("src\\pmproject\\quizQuestions.txt");
-            Scanner s = new Scanner(f);
-            for (int i = 0; i < 10; i++) {
-                questionNum[i]=s.nextLine();
-                optionOne[i]=s.nextLine();
-                optionTwo[i] =s.nextLine();
-                optionThree[i] =s.nextLine();
-                optionFour[i] =s.nextLine();
-                ansIndex[i] = Integer.parseInt(s.nextLine());
-                placeholder=s.nextLine();
-                //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Error:" + e);
-        }
+       
         **/
     }
 

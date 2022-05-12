@@ -1,42 +1,60 @@
-//gonna leave spaces between questions for easy viewing. Remember to work around this in program
-Sample question
-Option 1
-Option 2
-Option 3
-Option 4
-Index of answer
-
 Which is NOT an important factor for measuring the success of a project
 Was the client happy with the product
 Was the project on time and ready to go
 Did the analysts, developers and testers work together
 Does the project accomplish what it's meant to do
 3
-
 What's the purpose of the design step in the software development process
 Helps developers come up with a plan
 Saves time
 Mistakes are much easier and cheaper to correct at this point
 All of the above
 4
-
 Which of the following statements is correct
 Analysis is part of the waterfall model
 Testing is part of the waterfall model
 Both of the above statements are correct
 Neither of the above statements are correct
 3
-
 What is the most costly portion of the software development process
 Maintenance
 Implementation
 Design
 Marketing
 1
-
 What is the Gantt Chart used for
 Organizing costs of materials
 Planning out the program flow and structure
 Guiding the client through the project
 Allowing project leaders to easily view and schedule progress
 4
+6
+a1
+a2
+a3
+a4
+3
+7
+a1
+a2
+a3
+a4
+3
+8
+a1
+a2
+a3
+a4
+3
+9
+a1
+a2
+a3
+a4
+3
+10
+a1
+a2
+a3
+a4
+3

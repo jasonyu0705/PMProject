@@ -3,29 +3,98 @@ wdsav
  */
 package pmproject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  *
  * @author jason
  */
 public class Quiz extends javax.swing.JFrame {
-    
+
     private PmProject menu;
-    
+
+    public Question[] questions = new Question[10];
+    public String theQuestion;
+    private String optionOne;
+    private String optionTwo;
+    private String optionThree;
+    private String optionFour;
+    private int ansIndex;
+    private String placeholder;
+    Question q;
+    int counter = 0;
+
     /**
      * Creates new form Quiz
      */
     public Quiz(PmProject p) {
         initComponents();
+        try {
+            File f = new File("src\\pmproject\\quizQuestions.txt");
+            Scanner s = new Scanner(f);
+            for (int i = 0; i < 10; i++) {
+                /**
+                 * gonna leave spaces between questions for easy viewing.
+                 * Remember to work around this in program Sample question
+                 * Option 1 Option 2 Option 3 Option 4 Index of answer*
+                 */
+                theQuestion = s.nextLine();
+                optionOne = s.nextLine();
+                optionTwo = s.nextLine();
+                optionThree = s.nextLine();
+                optionFour = s.nextLine();
+                ansIndex = Integer.parseInt(s.nextLine());
+                //placeholder = s.nextLine();
+                // idk y but the spaces in the file messedup reading it
+                // if you can fix it , you can re add the spaces
+                q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 0);
+                questions[i] = q;
+                //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error:" + e);
+        }
         menu = p;
         rBtnA.setEnabled(false);
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);
         rBtnD.setEnabled(false);
         btnNext.setEnabled(false);
-        
-        
+
+    }
+public void showInfo(){
+            txtFieldQuestion.setText(questions[counter].getQuestion());
+        rBtnA.setText(questions[counter].getOption(1));
+        rBtnB.setText(questions[counter].getOption(2));
+        rBtnC.setText(questions[counter].getOption(3));
+        rBtnD.setText(questions[counter].getOption(4));
+}
+public void reset(){
+            rBtnA.setSelected(false);
+        rBtnB.setSelected(false);
+        rBtnC.setSelected(false);
+        rBtnD.setSelected(false);
+        if (counter==10) {
+        btnNext.setEnabled(false);
     }
 
+}
+public void checkAns(){
+    if (rBtnA.isSelected()==true){
+        questions[counter].setUserAnswer(0);
+    }else if (rBtnB.isSelected()==true){
+        questions[counter].setUserAnswer(1);
+    }else if (rBtnC.isSelected()==true){
+        questions[counter].setUserAnswer(2);
+    }else{
+        questions[counter].setUserAnswer(3);
+    }
+    System.out.println("hello");
+            
+
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +118,7 @@ public class Quiz extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         lblResults = new javax.swing.JLabel();
         btnStart = new javax.swing.JButton();
+        BtnCheck = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +167,13 @@ public class Quiz extends javax.swing.JFrame {
             }
         });
 
+        BtnCheck.setText("Check your work");
+        BtnCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCheckActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,24 +189,26 @@ public class Quiz extends javax.swing.JFrame {
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnNext)
                                     .addComponent(btnBack)
-                                    .addComponent(lblResults))
-                                .addGap(0, 606, Short.MAX_VALUE))))
+                                    .addComponent(lblResults)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnNext)
+                                        .addGap(107, 107, 107)
+                                        .addComponent(BtnCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtFieldQuestion)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(rBtnA)
-                                .addComponent(rBtnB)
-                                .addComponent(rBtnC)
-                                .addComponent(rBtnD))
+                            .addComponent(rBtnA)
+                            .addComponent(rBtnB)
+                            .addComponent(rBtnC)
+                            .addComponent(rBtnD)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblQuestion)
                                 .addGap(112, 112, 112)
                                 .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 238, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -152,7 +231,9 @@ public class Quiz extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(rBtnD)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                        .addComponent(btnNext)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNext)
+                            .addComponent(BtnCheck))
                         .addGap(36, 36, 36)
                         .addComponent(lblResults)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -171,8 +252,8 @@ public class Quiz extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         menu.setVisible(true);
-        this.setVisible(false); 
-        
+        this.setVisible(false);
+
         rBtnA.setEnabled(false);
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);
@@ -185,7 +266,18 @@ public class Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFieldQuestionActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
+        counter = counter + 1;
+        System.out.println(counter);
+        showInfo();
+          rBtnA.setSelected(false);
+        rBtnB.setSelected(false);
+        rBtnC.setSelected(false);
+        rBtnD.setSelected(false);
+        lblQuestion.setText("Question "+(counter+1));
+        if (counter==9) {
+        btnNext.setEnabled(false);
+        }
+        checkAns();
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
@@ -194,10 +286,17 @@ public class Quiz extends javax.swing.JFrame {
         rBtnC.setEnabled(true);
         rBtnD.setEnabled(true);
         btnNext.setEnabled(true);
+        showInfo();
+
     }//GEN-LAST:event_btnStartActionPerformed
+
+    private void BtnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnCheckActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnCheck;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnStart;

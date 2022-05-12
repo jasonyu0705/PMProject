@@ -46,9 +46,14 @@ public class StudyMat extends javax.swing.JFrame {
             txtAstudy.setText("Error: " + e);
         }
         
-        btnView.setSelected(true);
+        outputChapter();
     }
-
+    
+    private void outputChapter(){
+        int viewChap = cBoxChapter.getSelectedIndex();
+        txtAstudy.setText(textbook[viewChap].toString());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,6 +89,11 @@ public class StudyMat extends javax.swing.JFrame {
         cBoxChapter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Overview", "Success", "Waterfall Model", "Analysis", "Design", "Implementation", "Testing/Integration", "Maintenance", "Gantt Chart", "Universal Modeling Language" }));
 
         btnEdit.setText("Save Edits");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
@@ -102,19 +112,19 @@ public class StudyMat extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
-                        .addComponent(btnBack)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblUnitToStudy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cBoxChapter, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnView)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
                         .addComponent(btnEdit)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(368, 368, 368)
+                .addComponent(btnBack)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,9 +151,15 @@ public class StudyMat extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        int viewChap = cBoxChapter.getSelectedIndex();
-        txtAstudy.setText(textbook[viewChap].toString());
+        outputChapter();
     }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        int chapNum = cBoxChapter.getSelectedIndex();
+        String contents = txtAstudy.getText();
+        contents = contents.substring(21);
+        textbook[chapNum].setContents(contents);
+    }//GEN-LAST:event_btnEditActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

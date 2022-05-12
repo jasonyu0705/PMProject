@@ -42,9 +42,12 @@
                                   <Component id="btnBack" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblResults" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                      <Component id="btnBack2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnNext" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                                      <Component id="BtnCheck" min="-2" pref="133" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="btnCheck" min="-2" pref="133" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -55,14 +58,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtFieldQuestion" alignment="0" max="32767" attributes="0"/>
-                          <Component id="rBtnA" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="rBtnB" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="rBtnC" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="rBtnD" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblQuestion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-                              <Component id="btnStart" min="-2" pref="198" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="rBtnA" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rBtnB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rBtnC" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rBtnD" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lblQuestion" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="btnStart" min="-2" pref="198" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <EmptySpace min="0" pref="238" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -94,7 +101,8 @@
                       <EmptySpace pref="58" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnNext" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="BtnCheck" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCheck" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBack2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="lblResults" min="-2" max="-2" attributes="0"/>
@@ -203,12 +211,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStartActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="BtnCheck">
+    <Component class="javax.swing.JButton" name="btnCheck">
       <Properties>
         <Property name="text" type="java.lang.String" value="Check your work"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCheckActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCheckActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBack2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBack2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

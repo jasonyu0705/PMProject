@@ -3,25 +3,25 @@ Was the client happy with the product
 Was the project on time and ready to go
 Did the analysts, developers and testers work together
 Does the project accomplish what it's meant to do
-3
+2
 What's the purpose of the design step in the software development process
 Helps developers come up with a plan
 Saves time
 Mistakes are much easier and cheaper to correct at this point
 All of the above
-4
+3
 Which of the following statements is correct
 Analysis is part of the waterfall model
 Testing is part of the waterfall model
 Both of the above statements are correct
 Neither of the above statements are correct
-3
+2
 What is the most costly portion of the software development process
 Maintenance
 Implementation
 Design
 Marketing
-1
+0
 What is the Gantt Chart used for
 Organizing costs of materials
 Planning out the program flow and structure
@@ -33,28 +33,28 @@ a1
 a2
 a3
 a4
-3
+0
 7
 a1
 a2
 a3
 a4
-3
+0
 8
 a1
 a2
 a3
 a4
-3
+0
 9
 a1
 a2
 a3
 a4
-3
+0
 10
 a1
 a2
 a3
 a4
-3
+0

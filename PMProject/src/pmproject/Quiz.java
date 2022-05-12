@@ -18,6 +18,13 @@ public class Quiz extends javax.swing.JFrame {
     public Quiz(PmProject p) {
         initComponents();
         menu = p;
+        rBtnA.setEnabled(false);
+        rBtnB.setEnabled(false);
+        rBtnC.setEnabled(false);
+        rBtnD.setEnabled(false);
+        btnNext.setEnabled(false);
+        
+        
     }
 
     /**
@@ -32,16 +39,17 @@ public class Quiz extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         btnBack = new javax.swing.JButton();
         rBtnA = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        rBtnB = new javax.swing.JRadioButton();
+        rBtnC = new javax.swing.JRadioButton();
+        rBtnD = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblQuestion = new javax.swing.JLabel();
         txtFieldQuestion = new javax.swing.JTextField();
         btnNext = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         lblResults = new javax.swing.JLabel();
+        btnStart = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,22 +61,17 @@ public class Quiz extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(rBtnA);
-        rBtnA.setText("Placeholder");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Placeholder");
+        buttonGroup1.add(rBtnB);
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("Placeholder");
+        buttonGroup1.add(rBtnC);
 
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Placeholder");
-        jRadioButton4.setToolTipText("");
+        buttonGroup1.add(rBtnD);
+        rBtnD.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setText("Question 1");
+        lblQuestion.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblQuestion.setText("Question 1");
 
-        txtFieldQuestion.setText("Placeholder");
         txtFieldQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFieldQuestionActionPerformed(evt);
@@ -88,32 +91,46 @@ public class Quiz extends javax.swing.JFrame {
 
         lblResults.setText("Test Results:");
 
+        btnStart.setText("Start");
+        btnStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFieldQuestion)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rBtnA)
-                            .addComponent(btnNext))
-                        .addGap(350, 361, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBack)
-                            .addComponent(lblResults)
-                            .addComponent(jLabel2)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnNext)
+                                    .addComponent(btnBack)
+                                    .addComponent(lblResults))
+                                .addGap(0, 606, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFieldQuestion)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(rBtnA)
+                                .addComponent(rBtnB)
+                                .addComponent(rBtnC)
+                                .addComponent(rBtnD))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblQuestion)
+                                .addGap(112, 112, 112)
+                                .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -121,27 +138,33 @@ public class Quiz extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txtFieldQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(rBtnA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnNext)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(lblResults)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBack)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(lblQuestion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFieldQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rBtnA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rBtnB)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rBtnC)
+                        .addGap(12, 12, 12)
+                        .addComponent(rBtnD)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addComponent(btnNext)
+                        .addGap(36, 36, 36)
+                        .addComponent(lblResults)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnBack)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -149,7 +172,13 @@ public class Quiz extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         menu.setVisible(true);
-        this.setVisible(false);        
+        this.setVisible(false); 
+        
+        rBtnA.setEnabled(false);
+        rBtnB.setEnabled(false);
+        rBtnC.setEnabled(false);
+        rBtnD.setEnabled(false);
+        btnNext.setEnabled(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtFieldQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldQuestionActionPerformed
@@ -160,20 +189,29 @@ public class Quiz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNextActionPerformed
 
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+        rBtnA.setEnabled(true);
+        rBtnB.setEnabled(true);
+        rBtnC.setEnabled(true);
+        rBtnD.setEnabled(true);
+        btnNext.setEnabled(true);
+    }//GEN-LAST:event_btnStartActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnStart;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblQuestion;
     private javax.swing.JLabel lblResults;
     private javax.swing.JRadioButton rBtnA;
+    private javax.swing.JRadioButton rBtnB;
+    private javax.swing.JRadioButton rBtnC;
+    private javax.swing.JRadioButton rBtnD;
     private javax.swing.JTextField txtFieldQuestion;
     // End of variables declaration//GEN-END:variables
 }

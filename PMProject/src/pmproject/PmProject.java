@@ -29,6 +29,7 @@ public class PmProject extends javax.swing.JFrame {
     public PmProject() {
         initComponents();
         // read file stuff
+        /**
         try {
             File f = new File("src\\pmproject\\quizQuestions.txt");
             Scanner s = new Scanner(f);
@@ -45,6 +46,7 @@ public class PmProject extends javax.swing.JFrame {
         } catch (FileNotFoundException e) {
             System.out.println("Error:" + e);
         }
+        **/
     }
 
     /**

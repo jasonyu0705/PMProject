@@ -5,6 +5,7 @@ package pmproject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,9 +13,8 @@ import java.util.Scanner;
  * @author jason
  */
 public class Quiz extends javax.swing.JFrame {
-
+    // instantiate variables
     private PmProject menu;
-
     public Question[] questions = new Question[10];
     public String theQuestion;
     private String optionOne;
@@ -27,38 +27,46 @@ public class Quiz extends javax.swing.JFrame {
     int counter = 0;
     int rightAnswer = 0;
     int wrongAnswer = 0;
+    String msg = "";
+
 
     /**
      * Creates new form Quiz
      */
     public Quiz(PmProject p) {
         initComponents();
-        try {
+        try {// create the try to the try catch statement
+            //instantiate a new file
             File f = new File("src\\pmproject\\quizQuestions.txt");
+            // instantiate a new scanner
             Scanner s = new Scanner(f);
+            // read through the file with a for loop
             for (int i = 0; i < 10; i++) {
                 /**
                  * gonna leave spaces between questions for easy viewing.
                  * Remember to work around this in program Sample question
                  * Option 1 Option 2 Option 3 Option 4 Index of answer*
                  */
+                // readd all the info neede for one question object
                 theQuestion = s.nextLine();
                 optionOne = s.nextLine();
                 optionTwo = s.nextLine();
                 optionThree = s.nextLine();
                 optionFour = s.nextLine();
                 ansIndex = Integer.parseInt(s.nextLine());
-                //placeholder = s.nextLine();
-                // idk y but the spaces in the file messedup reading it
-                // if you can fix it , you can re add the spaces
+                
+               //create a new uquestion object
                 q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 4);
+                // add the question object to the array of questions
                 questions[i] = q;
                 //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error:" + e);
         }
+        
         menu = p;
+        // disable some buttons so that the program wont error
         rBtnA.setEnabled(false);
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);
@@ -68,15 +76,20 @@ public class Quiz extends javax.swing.JFrame {
         btnCheck.setEnabled(false);
 
     }
-
+/**
+ * show the info on each of the questions
+ */
     public void showInfo() {
+        // set the text to the 
         txtFieldQuestion.setText(questions[counter].getQuestion());
         rBtnA.setText(questions[counter].getOption(1));
         rBtnB.setText(questions[counter].getOption(2));
         rBtnC.setText(questions[counter].getOption(3));
         rBtnD.setText(questions[counter].getOption(4));
     }
-
+/**
+ * reset the buttons so that they are all de selected 
+ */
     public void reset() {
         rBtnA.setSelected(false);
         rBtnB.setSelected(false);
@@ -99,19 +112,18 @@ public class Quiz extends javax.swing.JFrame {
         } else {
             questions[counter].setUserAnswer(3);
         }
-        System.out.println(questions[counter].getUserAnswer()+" ua");
-        System.out.println(questions[counter].getAnswer()+" a");
+        System.out.println(questions[counter].getUserAnswer() + " ua");
+        System.out.println(questions[counter].getAnswer() + " a");
 
     }
 
     public void checkAns(int counter) {
         if (questions[counter].correct() == true) {
             rightAnswer = rightAnswer + 1;
-            System.out.println(rightAnswer + "right");
-
+            msg = msg + "Question #" + (counter + 1) + ") correct!\n";
         } else {
             wrongAnswer = wrongAnswer + 1;
-            System.out.println(wrongAnswer + "wrong");
+            msg = msg + "Question #" + (counter + 1) + ") incorrect! The correct answer is answer number " + (questions[counter].getAnswer() + 1) + "\n";
         }
         btnCheck.setEnabled(false);
 
@@ -152,7 +164,7 @@ public class Quiz extends javax.swing.JFrame {
         txtFieldQuestion = new javax.swing.JTextField();
         btnNext = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAResults = new javax.swing.JTextArea();
         lblResults = new javax.swing.JLabel();
         btnStart = new javax.swing.JButton();
         btnCheck = new javax.swing.JButton();
@@ -192,9 +204,9 @@ public class Quiz extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAResults.setColumns(20);
+        txtAResults.setRows(5);
+        jScrollPane1.setViewportView(txtAResults);
 
         lblResults.setText("Test Results:");
 
@@ -342,13 +354,13 @@ public class Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-        String msg = "";
+
+        int length = 0;
         for (int i = 0; i < 10; i++) {
             checkAns(i);
         }
-        for (int i = 0; i < 10; i++) {
-            
-        }
+        txtAResults.setText(msg);
+
     }//GEN-LAST:event_btnCheckActionPerformed
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
@@ -370,13 +382,13 @@ public class Quiz extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblQuestion;
     private javax.swing.JLabel lblResults;
     private javax.swing.JRadioButton rBtnA;
     private javax.swing.JRadioButton rBtnB;
     private javax.swing.JRadioButton rBtnC;
     private javax.swing.JRadioButton rBtnD;
+    private javax.swing.JTextArea txtAResults;
     private javax.swing.JTextField txtFieldQuestion;
     // End of variables declaration//GEN-END:variables
 }

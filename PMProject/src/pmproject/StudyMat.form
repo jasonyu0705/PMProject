@@ -100,16 +100,17 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
+          <StringArray count="10">
             <StringItem index="0" value="Overview"/>
             <StringItem index="1" value="Success"/>
-            <StringItem index="2" value="Analysis"/>
-            <StringItem index="3" value="Design"/>
-            <StringItem index="4" value="Implementation"/>
-            <StringItem index="5" value="Testing/Integration"/>
-            <StringItem index="6" value="Maintenance"/>
-            <StringItem index="7" value="Gantt Chart"/>
-            <StringItem index="8" value="Universal Modeling Language"/>
+            <StringItem index="2" value="Waterfall Model"/>
+            <StringItem index="3" value="Analysis"/>
+            <StringItem index="4" value="Design"/>
+            <StringItem index="5" value="Implementation"/>
+            <StringItem index="6" value="Testing/Integration"/>
+            <StringItem index="7" value="Maintenance"/>
+            <StringItem index="8" value="Gantt Chart"/>
+            <StringItem index="9" value="Universal Modeling Language"/>
           </StringArray>
         </Property>
       </Properties>

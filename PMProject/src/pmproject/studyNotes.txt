@@ -1,2 +1,10 @@
-//I will do this - dieter
-
+1
+The goal of the software development process is to create high-quality software by organizing, planning and utilizing diagrammatic conventions. Computer scientists have created a view of the development process called the "software development life cycle". One model of this is known as the "waterfall model"
+//add 300x300 image
+2
+A successful project should meet the following criteria:\n-It solves the problem it was meant to solve\n-It is easy to maintain\n-it is scalable to meet the needs of the client\n-There is a support system in place for the client\n-It was delivered on time\n-The client is satisfied
+//add 300x300 image
+3
+The waterfall model was developed by Dr. Winston Royce in 1970. It models the software development life cycle and includes several phases: problem statement, analysis, design, implementation, integration/testing, and maintenance. 
+//add 300x300 image
+4.

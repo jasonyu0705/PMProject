@@ -52,7 +52,7 @@ public class StudyMat extends javax.swing.JFrame {
 
         lblUnitToStudy.setText("Unit of Study:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Overview", "Success", "Analysis", "Design", "Implementation", "Testing/Integration", "Maintenance", "Gantt Chart", "Universal Modeling Language" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Overview", "Success", "Waterfall Model", "Analysis", "Design", "Implementation", "Testing/Integration", "Maintenance", "Gantt Chart", "Universal Modeling Language" }));
 
         btnEdit.setText("Save Edits");
 

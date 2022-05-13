@@ -56,7 +56,7 @@ public class Quiz extends javax.swing.JFrame {
                 ansIndex = Integer.parseInt(s.nextLine());
                 
                //create a new uquestion object
-                q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 999);
+                q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 5);
                 System.out.println("Answer: " + ansIndex);
                 // add the question object to the array of questions
                 questions[i] = q;

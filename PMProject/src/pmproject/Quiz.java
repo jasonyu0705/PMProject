@@ -105,12 +105,11 @@ public class Quiz extends javax.swing.JFrame {
     public void getAns() {
         if (rBtnA.isSelected() == true) {
             questions[counter].setUserAnswer(0);
-
         } else if (rBtnB.isSelected() == true) {
             questions[counter].setUserAnswer(1);
         } else if (rBtnC.isSelected() == true) {
             questions[counter].setUserAnswer(2);
-        } else {
+        } else if (rBtnD.isSelected() == true){
             questions[counter].setUserAnswer(3);
         }
 

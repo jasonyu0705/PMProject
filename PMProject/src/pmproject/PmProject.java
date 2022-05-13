@@ -42,6 +42,7 @@ public class PmProject extends javax.swing.JFrame {
         btnStudy = new javax.swing.JButton();
         btnQuiz = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        lblImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,11 @@ public class PmProject extends javax.swing.JFrame {
             }
         });
 
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pmproject/projectmanagement.jpg"))); // NOI18N
+        lblImage.setText("jLabel1");
+        lblImage.setMinimumSize(new java.awt.Dimension(382, 200));
+        lblImage.setPreferredSize(new java.awt.Dimension(382, 200));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,8 +98,11 @@ public class PmProject extends javax.swing.JFrame {
                         .addComponent(lblDescription))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
-                        .addComponent(lblPMTitle)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                        .addComponent(lblPMTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +117,9 @@ public class PmProject extends javax.swing.JFrame {
                 .addComponent(btnQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,6 +187,7 @@ public class PmProject extends javax.swing.JFrame {
     private javax.swing.JButton btnQuiz;
     private javax.swing.JButton btnStudy;
     private javax.swing.JLabel lblDescription;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblPMTitle;
     // End of variables declaration//GEN-END:variables
 }

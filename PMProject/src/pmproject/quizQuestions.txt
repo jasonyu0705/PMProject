@@ -34,27 +34,27 @@ Universal Malware Label
 Unity Marking Linguistics
 Unattached Modification Language
 0
-7
-a1
-a2
-a3
-a4
-0
-8
-a1
-a2
-a3
-a4
-0
-9
-a1
-a2
-a3
-a4
-0
-10
-a1
-a2
-a3
-a4
-0
+Who developed the waterfall model?
+Nikola Tesla
+Steve Jobs
+Winston Royce
+Royce Winston
+2
+What happens during the implementation phase of the waterfall model?
+designing the program's general architecture
+Writing the program according to its pre-planned framework
+Identifying and analyzing a problem
+Making changes according to feedback and adding new features
+1
+Why should programmers plan before they begin writing programs?
+They shouldn't, it's a waste of time, only tryhards do planning
+Because the teacher told you to
+It makes you feel smarter
+It is more organized and will save a lot of time in the coding process
+3
+Which of these projects does not reflect a similar structure to the software development life cycle?
+Script and storyboard for a movie
+Doing your taxes
+Scientific method for a science experiment
+Blueprints for a construction project
+1

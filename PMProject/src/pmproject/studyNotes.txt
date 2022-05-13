@@ -30,13 +30,10 @@ During analysis, it can be beneficial to use graphs and models to help visualize
 
 
 
-
 5
 The next step of the waterfall model is the design phase. During this step, a team will plan
 out the implementation of software to solve the problem. This step focuses on the more detailed
 aspects of the program's architecture.
-
-
 
 
 
@@ -49,14 +46,10 @@ are guidelines already in place from the analysis and design phases.
 
 
 
-
-
 7
 The fourth step of the waterfall model is the integration/testing. This step mainly involves
 finalizing the project and testing it for bugs and other errors. After this step, the
 program is ready to be released.
-
-
 
 
 
@@ -69,9 +62,6 @@ to correct any issues or work on further improving the program for future update
 
 
 
-
-
-
 9
 The Gantt Chart is a tool developed by mechanical engineer Henry Gantt in the 1910s.
 It is a chart that shows each individual segment of a project, its current progress, and total time needed.
@@ -80,13 +70,9 @@ Using a Gantt chart can be very useful for computer science projects.
 
 
 
-
-
-
 10
 UML which stands for Unified Modeling Language is a developmental modeling language which visually specifies parts of a system.
 Complex software designs are more easily described through UML than by just using words.
-
 
 
 

@@ -40,7 +40,7 @@ public class Quiz extends javax.swing.JFrame {
         initComponents();
         try {// create the try to the try catch statement
             //instantiate a new file
-            File f = new File("src\\pmproject\\quizQuestions.txt");
+            File f = new File("src/pmproject/quizQuestions.txt");
             // instantiate a new scanner
             Scanner s = new Scanner(f);
             // read through the file with a for loop

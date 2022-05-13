@@ -1,7 +1,8 @@
 /*
-Matthew Dieter Jason
-12/05/2022
 JFrame for quiz for user to test
+Reads from a data file to create new question objects
+Then asks the user these questions and determines if they were right or wrong
+Outputs their results at the end
  */
 package pmproject;
 

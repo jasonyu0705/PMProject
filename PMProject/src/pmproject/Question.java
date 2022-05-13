@@ -1,5 +1,7 @@
-/*Question class
+/*
+Question class
 attributes: question, option 1-4, answer
+Used in the multiple choice test
  */
 package pmproject;
 

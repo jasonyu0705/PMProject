@@ -14,20 +14,19 @@ import java.util.Scanner;
  */
 public class Quiz extends javax.swing.JFrame {
     // instantiate variables
-    private PmProject menu;
-    public Question[] questions = new Question[10];
-    public String theQuestion;
-    private String optionOne;
-    private String optionTwo;
-    private String optionThree;
-    private String optionFour;
-    private int ansIndex;
-    private String placeholder;
-    Question q;
-    int counter = 0;
-    int rightAnswer = 0;
-    int wrongAnswer = 0;
-    String msg = "";
+    private PmProject menu; //main menu window
+    public Question[] questions = new Question[10]; //array of question objects. Assign size 10 to hold the 10 multiple choice questions
+    public String theQuestion; //question as string
+    private String optionOne; //first option
+    private String optionTwo; //second option
+    private String optionThree; //third option
+    private String optionFour; //fourth option
+    private int ansIndex; //index of correct answer
+    Question q; //question object
+    int counter = 0; //index of question number currently on as integer
+    int rightAnswer = 0; //counter for right answers
+    int wrongAnswer = 0; //counter for wrong answers
+    String msg = ""; //message to display
 
 
     /**
@@ -62,8 +61,8 @@ public class Quiz extends javax.swing.JFrame {
                 questions[i] = q;
                 //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Error:" + e);
+        } catch (FileNotFoundException e) { //otherwise, output error message
+            txtAResults.setText("Error:" + e);
         }
         
         menu = p;
@@ -102,42 +101,53 @@ public class Quiz extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Set user input for answer
+     */
     public void getAns() {
-        if (rBtnA.isSelected() == true) {
-            questions[counter].setUserAnswer(0);
-        } else if (rBtnB.isSelected() == true) {
-            questions[counter].setUserAnswer(1);
-        } else if (rBtnC.isSelected() == true) {
-            questions[counter].setUserAnswer(2);
-        } else if (rBtnD.isSelected() == true){
-            questions[counter].setUserAnswer(3);
+        if (rBtnA.isSelected() == true) { //if user selects first radio button
+            questions[counter].setUserAnswer(0); //set user answer to 0 through setUserAnswer method in question class
+        } else if (rBtnB.isSelected() == true) { //if user selects second radio button
+            questions[counter].setUserAnswer(1); //set user answer to 1 through setUserAnswer method in question class
+        } else if (rBtnC.isSelected() == true) { //if user selects third radio button
+            questions[counter].setUserAnswer(2);//set user answer to 2 through setUserAnswer method in question class
+        } else if (rBtnD.isSelected() == true){ //if user selects fourth radio button
+            questions[counter].setUserAnswer(3); //set user answer to 3 through setUserAnswer method in question class
         }
 
     }
-
+    
+    /**
+     * Keep track of right and wrong answers during quiz
+     * @param counter 
+     */
     public void checkAns(int counter) {
-        if (questions[counter].correct() == true) {
-            rightAnswer = rightAnswer + 1;
-            msg = msg + "Question #" + (counter + 1 ) + ") correct!\n";
-        } else {
-            wrongAnswer = wrongAnswer + 1;
-            msg = msg + "Question #" + (counter + 1) + ") incorrect! The correct answer is answer number " + (questions[counter].getAnswer() + 1) + "\n";
+        //invoke correct method from question class to check if user answer same as correct answer
+        if (questions[counter].correct() == true) { //if same
+            rightAnswer = rightAnswer + 1; //add one to right answer counter
+            msg = msg + "Question #" + (counter + 1 ) + ") correct!\n"; //update message with right answer message
+        } else { //if different
+            wrongAnswer = wrongAnswer + 1; //add one to wrong answer counter
+            msg = msg + "Question #" + (counter + 1) + ") incorrect! The correct answer is answer number " + (questions[counter].getAnswer() + 1) + "\n"; //update message with wrong answer message
         }
-        btnCheck.setEnabled(false);
+        btnCheck.setEnabled(false); //set check answer button to disabled as we don't need user to check answers again
 
     }
-
+    
+    /**
+     * Disable and enable next and back buttons depending on what question user on
+     */
     public void checkButtonStat() {
-        if (counter == 9) {
-            btnNext.setEnabled(false);
-            btnCheck.setEnabled(true);
-        } else {
-            btnNext.setEnabled(true);
+        if (counter == 9) { //if user on last question
+            btnNext.setEnabled(false); //disable next button as no question after
+            btnCheck.setEnabled(true); //enable check button as they looked at all questions
+        } else { //if not on last question
+            btnNext.setEnabled(true); //enable next button as they can move to next question
         }
-        if (counter == 0) {
-            btnBack2.setEnabled(false);
-        } else {
-            btnBack2.setEnabled(true);
+        if (counter == 0) { //if user on first question
+            btnBack2.setEnabled(false); //disable back button as no previous question
+        } else { //otherwise, not on first question
+            btnBack2.setEnabled(true); //enable back button as there is button before
         }
 
     }
@@ -329,46 +339,46 @@ public class Quiz extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFieldQuestionActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        counter = counter + 1;
+        counter = counter + 1; //add one to index
 
-        showInfo();
+        showInfo(); //invoke showInfo method to show info about question
+        //set all option radio buttons to disabled so user can choose
         rBtnA.setSelected(false);
         rBtnB.setSelected(false);
         rBtnC.setSelected(false);
         rBtnD.setSelected(false);
-        btnStart.setEnabled(false);
-        lblQuestion.setText("Question " + (counter + 1));
-        checkButtonStat();
-        getAns();
+        btnStart.setEnabled(false); //set start button to disabled because user already started quiz
+        lblQuestion.setText("Question " + (counter + 1)); //output question number on question label. Counter is index based so counting numbers is one more
+        checkButtonStat(); //invoke checkButtonStat method to check current question user on and disable next and back buttons if necessary
+        getAns(); //invoke getAns method to set user answer
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        rBtnA.setEnabled(true);
+        //set all quiz buttons to enabled when startning quiz
+        rBtnA.setEnabled(true); 
         rBtnB.setEnabled(true);
         rBtnC.setEnabled(true);
         rBtnD.setEnabled(true);
         btnNext.setEnabled(true);
-        showInfo();
+        showInfo(); //invoke showInfo method to show question information
 
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void btnCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
-
-        int length = 0;
-        for (int i = 0; i < 10; i++) {
-            checkAns(i);
+        for (int i = 0; i < 10; i++) { //for each question of quiz
+            checkAns(i); //invoke checkAns to check if user answr correct
         }
-        txtAResults.setText(msg);
+        txtAResults.setText(msg); //put message of results in results text area 
 
     }//GEN-LAST:event_btnCheckActionPerformed
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
-        counter = counter - 1;
-        System.out.println(counter);
-        showInfo();
-        lblQuestion.setText("Question " + (counter + 1));
-        checkButtonStat();
-        getAns();
+        counter = counter - 1; //take one off index
+        System.out.println(counter); //output count        
+        showInfo(); //invoke showInfo method to show current index question info
+        lblQuestion.setText("Question " + (counter + 1)); //update question number
+        checkButtonStat(); //invoke checkButtonStat method to check which buttons to enable and disable
+        getAns(); //invoke getAns method user answer
     }//GEN-LAST:event_btnBack2ActionPerformed
 
 

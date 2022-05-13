@@ -319,7 +319,7 @@ public class Quiz extends javax.swing.JFrame {
         this.setVisible(false); //make quiz jframe invisible to user
         
         //set all the quiz feautre buttons to disabled in case user returns to quiz. They want a fresh start
-        rBtnA.setEnabled(false);
+        rBtnA.setEnabled(false); 
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);
         rBtnD.setEnabled(false);

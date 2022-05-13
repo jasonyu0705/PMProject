@@ -1,4 +1,3 @@
-7
 1
 The goal of the software development process is to create high-quality software by organizing, planning and utilizing diagrammatic conventions. 
 Computer scientists have created a view of the development process called the "software development life cycle". One model of this is known as 
@@ -24,8 +23,8 @@ problem statement, analysis, design, implementation, integration/testing, and ma
 
 
 4
-
-
+Analysis is the first step in the waterfall model. Your team figures out the problem your trying to solve, and come up with ideas on how to
+work on creating a program to solve it. The analysis
 
 
 

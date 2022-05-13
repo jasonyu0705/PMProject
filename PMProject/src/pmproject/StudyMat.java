@@ -30,12 +30,11 @@ public class StudyMat extends javax.swing.JFrame {
             textbook = new notes[10]; //initialize array of size 10 to hold the 10 chapters
             String msg = ""; //information of chapter as string
             int chapter; //chapter/topic number
-            int chapterLength = Integer.parseInt(s.nextLine()); //very first line is how many lines in the text file each chapter's contents is
                     
             //for each index of the array of notes
             for (int i = 0; i < textbook.length; i++){
                 chapter = Integer.parseInt(s.nextLine()); //chapter number are the first lines
-                for (int j = 0; j < chapterLength; j++) { //for each line of the chapter's contents
+                for (int j = 0; j < 7; j++) { //for each line of the chapter's contents(7 lines of content)
                     msg += s.nextLine() + "\n"; //add it to the string message with a new line. This avoids having too much info on the same line
                 }
                 textbook[i]  = new notes(chapter, msg); //instantiate new textbook object at index of notes array

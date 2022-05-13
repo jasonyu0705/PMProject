@@ -1,8 +1,8 @@
 /*
-Matthew Yu
-11/05/2022
-
-
+Dieter Jason Matthew 5/12/22
+Notes class
+attributes: chapter, contents
+These are notes which will be used in the study portion of the project
  */
 package pmproject;
 

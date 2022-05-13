@@ -1,4 +1,5 @@
 /*
+Dieter Jason Matthew 5/12/22
 JFrame for quiz for user to test
 Reads from a data file to create new question objects
 Then asks the user these questions and determines if they were right or wrong

@@ -1,4 +1,5 @@
 /*
+Dieter Jason Matthew 5/12/22
 Question class
 attributes: question, option 1-4, answer
 Used in the multiple choice test

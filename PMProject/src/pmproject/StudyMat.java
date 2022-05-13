@@ -1,6 +1,8 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Dieter Jason Matthew 5/12/22
+Study material frame class
+displays the contents of any chapter and lets the user choose between them
+uses the notes object
  */
 package pmproject;
 

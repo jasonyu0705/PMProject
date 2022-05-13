@@ -1,5 +1,8 @@
 /* 
-
+Dieter Jason Matthew 5/12/22
+Main menu class of the project
+Has a fancy swanky image icon
+User can choose to go to study material or the quiz
  */
 package pmproject;
 

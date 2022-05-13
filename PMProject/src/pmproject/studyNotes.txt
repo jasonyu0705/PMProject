@@ -23,15 +23,18 @@ problem statement, analysis, design, implementation, integration/testing, and ma
 
 
 4
-Analysis is the first step in the waterfall model. Your team figures out the problem your trying to solve, and come up with ideas on how to
-work on creating a program to solve it. The analysis
+Analysis is the first step in the waterfall model. Your team figures out the problem your trying to solve,
+and come up with ideas on how to work on creating a program to solve it.
+During analysis, it can be beneficial to use graphs and models to help visualize the problem and solution.
 
 
 
 
 
 5
-
+The next step of the waterfall model is the design phase. During this step, a team will plan
+out the implementation of software to solve the problem. This step focuses on the more detailed
+aspects of the program's architecture.
 
 
 
@@ -39,7 +42,9 @@ work on creating a program to solve it. The analysis
 
 
 6
-
+The third phase of the waterfall model is the implementation. This step involves writing the actual
+code for the program. It is much more streamlined and efficient when using the waterfall model as there
+are guidelines already in place from the analysis and design phases.
 
 
 
@@ -47,7 +52,9 @@ work on creating a program to solve it. The analysis
 
 
 7
-
+The fourth step of the waterfall model is the integration/testing. This step mainly involves
+finalizing the project and testing it for bugs and other errors. After this step, the
+program is ready to be released.
 
 
 
@@ -55,6 +62,9 @@ work on creating a program to solve it. The analysis
 
 
 8
+The fifth and final step of the waterfall model is the maintenance phase. This phase comes after
+the program has already been finished and released. During this phase, the developers use feedback
+to correct any issues or work on further improving the program for future updates.
 
 
 
@@ -63,7 +73,10 @@ work on creating a program to solve it. The analysis
 
 
 9
-
+The Gantt Chart is a tool developed by mechanical engineer Henry Gantt in the 1910s.
+It is a chart that shows each individual segment of a project, its current progress, and total time needed.
+It helps project managers visualize each different part of the project and track overall progress.
+Using a Gantt chart can be very useful for computer science projects.
 
 
 
@@ -71,7 +84,8 @@ work on creating a program to solve it. The analysis
 
 
 10
-
+UML which stands for Unified Modeling Language is a developmental modeling language which visually specifies parts of a system.
+Complex software designs are more easily described through UML than by just using words.
 
 
 

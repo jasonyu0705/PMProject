@@ -30,28 +30,33 @@ public class StudyMat extends javax.swing.JFrame {
             textbook = new notes[10]; //initialize array of size 10 to hold the 10 chapters
             String msg = ""; //information of chapter as string
             int chapter; //chapter/topic number
-
-            
+            int chapterLength = Integer.parseInt(s.nextLine()); //very first line is how many lines in the text file each chapter's contents is
+                    
+            //for each index of the array of notes
             for (int i = 0; i < textbook.length; i++){
-                chapter = Integer.parseInt(s.nextLine());
-                for (int j = 0; j < 7; j++) {
-                    msg += s.nextLine() + "\n";
+                chapter = Integer.parseInt(s.nextLine()); //chapter number are the first lines
+                for (int j = 0; j < chapterLength; j++) { //for each line of the chapter's contents
+                    msg += s.nextLine() + "\n"; //add it to the string message with a new line. This avoids having too much info on the same line
                 }
-                textbook[i]  = new notes(chapter, msg);
-                msg = "";
+                textbook[i]  = new notes(chapter, msg); //instantiate new textbook object at index of notes array
+                msg = ""; //reset message to nothing
             }
             
             
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) { //otherwise output error message
             txtAstudy.setText("Error: " + e);
         }
         
-        outputChapter();
+        btnEdit.setEnabled(false); //set enabled button to false as user hasn't viewed any chapter when starting
+        
     }
     
+    /**
+     * Helper method to output contents of a chapter
+     */
     private void outputChapter(){
-        int viewChap = cBoxChapter.getSelectedIndex();
-        txtAstudy.setText(textbook[viewChap].toString());
+        int viewChap = cBoxChapter.getSelectedIndex(); //get user's selected chapter from combo box to determine which index of notes array to output to user
+        txtAstudy.setText(textbook[viewChap].toString()); //output chapter contents and chapter number in text area by invoking toString method from notes class
     }
     
     /**
@@ -146,19 +151,20 @@ public class StudyMat extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        menu.setVisible(true);
-        this.setVisible(false);
+        menu.setVisible(true); //let user see menu jframe
+        this.setVisible(false); //user doesn't want to see notes jframe anymore
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        outputChapter();
+        outputChapter(); //invoke outputChapter method to output information of user selected chapter
+        btnEdit.setEnabled(true); //user selected a chapter to look at, enable edit button so they can make edits
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        int chapNum = cBoxChapter.getSelectedIndex();
-        String contents = txtAstudy.getText();
-        contents = contents.substring(21);
-        textbook[chapNum].setContents(contents);
+        int chapNum = cBoxChapter.getSelectedIndex(); //get user's current chapter by seeing what combo box number selected
+        String contents = txtAstudy.getText(); //store string in text area within a variable
+        contents = contents.substring(21); //we only want the contents of the chapter, so we leave out the chapter and contents header and the chapter number, which is always the first 20 characters
+        textbook[chapNum].setContents(contents); //set the current chapter's contents to whatever user edited using setContents method from notes class
     }//GEN-LAST:event_btnEditActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

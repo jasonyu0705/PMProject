@@ -315,9 +315,10 @@ public class Quiz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        menu.setVisible(true);
-        this.setVisible(false);
-
+        menu.setVisible(true); //make main menu jframe visible to user
+        this.setVisible(false); //make quiz jframe invisible to user
+        
+        //set all the quiz feautre buttons to disabled in case user returns to quiz. They want a fresh start
         rBtnA.setEnabled(false);
         rBtnB.setEnabled(false);
         rBtnC.setEnabled(false);

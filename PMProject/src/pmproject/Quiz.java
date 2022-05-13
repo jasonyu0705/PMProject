@@ -56,7 +56,8 @@ public class Quiz extends javax.swing.JFrame {
                 ansIndex = Integer.parseInt(s.nextLine());
                 
                //create a new uquestion object
-                q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 4);
+                q = new Question(theQuestion, optionOne, optionTwo, optionThree, optionFour, ansIndex, 999);
+                System.out.println("Answer: " + ansIndex);
                 // add the question object to the array of questions
                 questions[i] = q;
                 //NOTE THIS WILL NOT WORK UNTIL THE DATA FILE IS FINISHED
@@ -112,15 +113,13 @@ public class Quiz extends javax.swing.JFrame {
         } else {
             questions[counter].setUserAnswer(3);
         }
-        System.out.println(questions[counter].getUserAnswer() + " ua");
-        System.out.println(questions[counter].getAnswer() + " a");
 
     }
 
     public void checkAns(int counter) {
         if (questions[counter].correct() == true) {
             rightAnswer = rightAnswer + 1;
-            msg = msg + "Question #" + (counter + 1) + ") correct!\n";
+            msg = msg + "Question #" + (counter + 1 ) + ") correct!\n";
         } else {
             wrongAnswer = wrongAnswer + 1;
             msg = msg + "Question #" + (counter + 1) + ") incorrect! The correct answer is answer number " + (questions[counter].getAnswer() + 1) + "\n";

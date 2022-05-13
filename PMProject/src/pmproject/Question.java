@@ -69,7 +69,7 @@ public class Question {
     }
     
     public boolean correct(){
-        return (userAnswer == answer);
+        return (userAnswer == answer); 
     }
     
     

@@ -151,7 +151,7 @@ public class Question {
      * @return - the string
      */
     public String toString() {
-        return question + "?" + "\n"
+        return question + "\n"
                 + " a) " + option1
                 + "\n b) " + option2
                 + "\n c) " + option3

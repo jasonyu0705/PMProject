@@ -1,38 +1,38 @@
-Which is NOT an important factor for measuring the success of a project
+Which is NOT an important factor for measuring the success of a project?
 Was the client happy with the product
 Was the project on time and ready to go
 Did the analysts, developers and testers work together
 Does the project accomplish what it's meant to do
 2
-What's the purpose of the design step in the software development process
+What's the purpose of the design step in the software development process?
 Helps developers come up with a plan
 Saves time
 Mistakes are much easier and cheaper to correct at this point
 All of the above
 3
-Which of the following statements is correct
+Which of the following statements is correct?
 Analysis is part of the waterfall model
 Testing is part of the waterfall model
 Both of the above statements are correct
 Neither of the above statements are correct
 2
-What is the most costly portion of the software development process
+What is the most costly portion of the software development process?
 Maintenance
 Implementation
 Design
 Marketing
 0
-What is the Gantt Chart used for
+What is the Gantt Chart used for?
 Organizing costs of materials
 Planning out the program flow and structure
 Guiding the client through the project
 Allowing project leaders to easily view and schedule progress
 3
-6
-a1
-a2
-a3
-a4
+What does UML stand for?
+Unified Modeling Language
+Universal Malware Label
+Unity Marking Linguistics
+Unattached Modification Language
 0
 7
 a1

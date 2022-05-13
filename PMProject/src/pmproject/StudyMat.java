@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class StudyMat extends javax.swing.JFrame {
 
     private PmProject menu;
-    private notes[] textbook;
+    private notes[] textbook; //array of notes to store information of each chapter
 
     /**
      * Creates new form StudyMat
@@ -24,12 +24,12 @@ public class StudyMat extends javax.swing.JFrame {
         initComponents();
         menu = p;
 
-        try {
+        try { //try to find study notes text file and create scanner object in it
             File f = new File("src/pmproject/studyNotes.txt");
-            Scanner s = new Scanner(f);
-            textbook = new notes[10]; //10 chapters
-            String msg = "";
-            int chapter;
+            Scanner s = new Scanner(f); 
+            textbook = new notes[10]; //initialize array of size 10 to hold the 10 chapters
+            String msg = ""; //information of chapter as string
+            int chapter; //chapter/topic number
 
             
             for (int i = 0; i < textbook.length; i++){
